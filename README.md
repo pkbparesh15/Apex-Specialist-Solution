@@ -19,9 +19,30 @@ Click on App Launcher and search Create Default Data then Click Create Data to g
 ## Automated Record Creation
 
 
-1.Go to the App Launcher -> Search How We Roll Maintenance -> click on Maintenance Requests -> click on first case -> click Details -> change the type Repair to Routine Maintenance -> select Origin = Phone -> Vehicle = select Teardrop Camper , save it.
-2.Feed -> Close Case = save it..
-3.Go to the Object Manager -> Maintenance Request ->Field & Relationships ->New ->Lookup Relationship -> next -> select Equipment ->next -> Field Label = Equipment ->next->next->next -> save it .
+1.Go to the App Launcher ->
+Search How We Roll Maintenance ->
+click on Maintenance Requests ->
+click on first case ->
+click Details ->
+change the type Repair to Routine Maintenance ->
+select Origin = Phone ->
+Vehicle = select Teardrop Camper ,
+save it.
+
+2.Feed ->Close Case 
+save it..
+
+3.Go to the Object Manager ->
+Maintenance Request ->
+Field & Relationships ->
+New ->Lookup Relationship ->
+next ->
+select Equipment ->
+next ->
+Field Label = Equipment ->
+next->next->next -> 
+save it .
+
 4.Now go to the developer console use below code.
  
  
@@ -112,8 +133,17 @@ public with sharing class MaintenanceRequestHelper {
 ```
  
 After saving the code go back the How We Roll Maintenance , 
-click on Maintenance Requests -> click on 2nd case -> click Details -> change the type Repair to Routine Maintenance -> select Origin = Phone -> Vehicle = select Teardrop Camper , save it.
-Feed -> Close Case = save it..
+
+click on Maintenance Requests ->
+click on 2nd case ->
+click Details -> 
+change the type Repair to Routine Maintenance -> 
+select Origin = Phone -> 
+Vehicle = select Teardrop Camper , 
+save it.
+
+Feed -> Close Case 
+save it..
 
 Now check challenge.
 
@@ -122,7 +152,12 @@ Now check challenge.
 ## Synchronize Salesforce data with an external system
 
 
-Setup -> Search in quick find box -> click Remote Site Settings -> Name = Warehouse  URL , Remote Site URL = https://th-superbadge-apex.herokuapp.com , make sure active is selected.
+Setup ->
+Search in quick find box ->
+click Remote Site Settings ->
+Name = Warehouse  URL , 
+Remote Site URL = https://th-superbadge-apex.herokuapp.com , 
+make sure active is selected.
 Go to the developer console use below code .
 
 ### WarehouseCalloutService.apxc :-
@@ -182,9 +217,11 @@ public with sharing class WarehouseCalloutService implements Queueable {
  
 
 After saving the code open execute anonymous window ( CTRl+E ) and run this method ,
-
+```
+ 
 System.enqueueJob(new WarehouseCalloutService());
-
+```
+ 
 Now check Challenge.
 
 
@@ -209,7 +246,11 @@ global with sharing class WarehouseSyncSchedule implements Schedulable{
 
 Save it , after that...
 
-Go to setup -> Seacrh in Quick find box -> Apex Classes -> click Schedule Apex and Jb Name = WarehouseSyncScheduleJob , Apex Class = WarehouseSyncSchedule as it is below shown in the image ,
+Go to setup ->
+Seacrh in Quick find box ->
+Apex Classes -> 
+click Schedule Apex and Job Name = WarehouseSyncScheduleJob ,
+Apex Class = WarehouseSyncSchedule 
 
 Now check challenge.
 

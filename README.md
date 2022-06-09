@@ -1,5 +1,6 @@
 # Apex-Specialist-Solution
 ## Set Up Development Org :-
+
 Create a new Trailhead Playground for this superbadge.
 Install this unlocked package (package ID: 04t6g000008av9iAAA).
 Add picklist values Repair and Routine Maintenance to the Type field on the Case object.
@@ -26,6 +27,9 @@ Click on App Launcher and search Create Default Data then Click Create Data to g
  
 
 ### MaintenanceRequestHelper.apxc
+
+```
+ 
 public with sharing class MaintenanceRequestHelper {
     public static void updateworkOrders(List<Case> updWorkOrders, Map<Id,Case> nonUpdCaseMap) {
         Set<Id> validIds = new Set<Id>();
@@ -89,10 +93,13 @@ public with sharing class MaintenanceRequestHelper {
         }
     }
 } 
-  
+  ```
+ 
   
 ### MaitenanceRequest.apxt 
   
+  ```
+ 
  trigger MaintenanceRequest on Case (before update, after update) {
 
     if(Trigger.isUpdate && Trigger.isAfter){
@@ -102,7 +109,8 @@ public with sharing class MaintenanceRequestHelper {
     }
 
 }
-
+```
+ 
 After saving the code go back the How We Roll Maintenance , 
 click on Maintenance Requests -> click on 2nd case -> click Details -> change the type Repair to Routine Maintenance -> select Origin = Phone -> Vehicle = select Teardrop Camper , save it.
 Feed -> Close Case = save it..
@@ -117,8 +125,10 @@ Now check challenge.
 Setup -> Search in quick find box -> click Remote Site Settings -> Name = Warehouse  URL , Remote Site URL = https://th-superbadge-apex.herokuapp.com , make sure active is selected.
 Go to the developer console use below code .
 
-WarehouseCalloutService.apxc :-
+### WarehouseCalloutService.apxc :-
 
+```
+ 
 public with sharing class WarehouseCalloutService implements Queueable {
     private static final String WAREHOUSE_URL = 'https://th-superbadge-apex.herokuapp.com/equipment';
     
@@ -168,7 +178,8 @@ public with sharing class WarehouseCalloutService implements Queueable {
     }
     
 }
-
+```
+ 
 
 After saving the code open execute anonymous window ( CTRl+E ) and run this method ,
 
@@ -184,23 +195,21 @@ Now check Challenge.
 
 
 Go to the developer console use below code ,
-WarehouseSyncShedule.apxc :-
+### WarehouseSyncShedule.apxc :-
 
+```
+ 
 global with sharing class WarehouseSyncSchedule implements Schedulable{
     global void execute(SchedulableContext ctx){
         System.enqueueJob(new WarehouseCalloutService());
     }
 }
-
+```
+ 
 
 Save it , after that...
 
 Go to setup -> Seacrh in Quick find box -> Apex Classes -> click Schedule Apex and Jb Name = WarehouseSyncScheduleJob , Apex Class = WarehouseSyncSchedule as it is below shown in the image ,
-
-
-
-
-
 
 Now check challenge.
 
@@ -210,7 +219,10 @@ Now check challenge.
 
 
 Go to the developer console use below code ,
-MaintenanceRequestHelperTest.apxc :-
+### MaintenanceRequestHelperTest.apxc :-
+ 
+ ```
+ 
 @istest
 public with sharing class MaintenanceRequestHelperTest {
     
@@ -365,8 +377,13 @@ public with sharing class MaintenanceRequestHelperTest {
         system.assert(allRequests.size() == 300);
     }
 }
+```
+ 
 
-MaintenanceRequestHelper.apxc :-
+### MaintenanceRequestHelper.apxc :-
+ 
+ ```
+ 
 public with sharing class MaintenanceRequestHelper {
     public static void updateworkOrders(List<Case> updWorkOrders, Map<Id,Case> nonUpdCaseMap) {
         Set<Id> validIds = new Set<Id>();
@@ -428,12 +445,20 @@ public with sharing class MaintenanceRequestHelper {
         }
     }
 }
-MaintenanceRequest.apxt :-
+```
+ 
+ 
+### MaintenanceRequest.apxt :-
+ 
+ ```
+ 
 trigger MaintenanceRequest on Case (before update, after update) {
     if(Trigger.isUpdate && Trigger.isAfter){
         MaintenanceRequestHelper.updateWorkOrders(Trigger.New, Trigger.OldMap);
     }
 }
+ ```
+ 
 run all
 
 Now check challenge.
@@ -448,7 +473,10 @@ Now check challenge.
 
 
 Go to the developer console use below code ,
-WarehouseCalloutService.apxc :-
+### WarehouseCalloutService.apxc :-
+ 
+ ```
+ 
 public with sharing class WarehouseCalloutService {
 
     private static final String WAREHOUSE_URL = 'https://th-superbadge-apex.herokuapp.com/equipment';
@@ -492,8 +520,12 @@ public with sharing class WarehouseCalloutService {
         }
     }
 }
-
-WarehouseCalloutServiceTest.apxc :-
+```
+ 
+### WarehouseCalloutServiceTest.apxc :-
+ 
+ ```
+ 
 @isTest
 
 private class WarehouseCalloutServiceTest {   
@@ -507,8 +539,11 @@ private class WarehouseCalloutServiceTest {
         System.assertEquals(1, [SELECT count() FROM Product2]);
     }     
 }
-
-WarehouseCalloutServiceMock.apxc :-
+```
+ 
+### WarehouseCalloutServiceMock.apxc :-
+```
+ 
 @isTest
 global class WarehouseCalloutServiceMock implements HttpCalloutMock {
     // implement http mock callout
@@ -525,6 +560,8 @@ global class WarehouseCalloutServiceMock implements HttpCalloutMock {
         return response;
     }
 }
+ ```
+ 
 run all
 
 Now check challenge.
@@ -540,15 +577,21 @@ Now check challenge.
 
 
 Go to the developer console use below code ,
-WarehouseSyncSchedule.apxc :-
+### WarehouseSyncSchedule.apxc :-
+ 
+ ```
 global class WarehouseSyncSchedule implements Schedulable {
     global void execute(SchedulableContext ctx) {
         
         WarehouseCalloutService.runWarehouseEquipmentSync();
     }
 }
-WarehouseSyncScheduleTest.apxc :-
-@isTest
+ ```
+ 
+### WarehouseSyncScheduleTest.apxc :-
+ 
+```
+ @isTest
 public class WarehouseSyncScheduleTest {
    
     @isTest static void WarehousescheduleTest(){
@@ -565,6 +608,7 @@ public class WarehouseSyncScheduleTest {
        
     }
 }
-
+```
+ 
 run all
 Now check challenge.

@@ -40,8 +40,8 @@
 - select Equipment ->
 - next ->
 - Field Label = Equipment ->
-- - next->next->next -> 
-- - save it .
+- next->next->next -> 
+- save it .
 
 4.Now go to the developer console use below code.
  

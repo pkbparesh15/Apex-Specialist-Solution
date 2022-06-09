@@ -1,14 +1,14 @@
 # Apex-Specialist-Solution
 ## Set Up Development Org :-
 
-Create a new Trailhead Playground for this superbadge.
-Install this unlocked package (package ID: 04t6g000008av9iAAA).
-Add picklist values Repair and Routine Maintenance to the Type field on the Case object.
-Update the Case page layout assignment to use the Case (HowWeRoll) Layout for your profile.
-Rename the tab/label for the Case tab to Maintenance Request.
-Update the Product page layout assignment to use the Product (HowWeRoll) Layout for your profile.
-Rename the tab/label for the Product object to Equipment.
-Click on App Launcher and search Create Default Data then Click Create Data to generate sample data for the application.
+- Create a new Trailhead Playground for this superbadge.
+- Install this unlocked package (package ID: 04t6g000008av9iAAA).
+- Add picklist values Repair and Routine Maintenance to the Type field on the Case object.
+- Update the Case page layout assignment to use the Case (HowWeRoll) Layout for your profile.
+- Rename the tab/label for the Case tab to Maintenance Request.
+- Update the Product page layout assignment to use the Product (HowWeRoll) Layout for your profile.
+- Rename the tab/label for the Product object to Equipment.
+- Click on App Launcher and search Create Default Data then Click Create Data to generate sample data for the application.
  
 
 
@@ -20,28 +20,28 @@ Click on App Launcher and search Create Default Data then Click Create Data to g
 
 
 1.Go to the App Launcher ->
-Search How We Roll Maintenance ->
-click on Maintenance Requests ->
-click on first case ->
-click Details ->
-change the type Repair to Routine Maintenance ->
-select Origin = Phone ->
-Vehicle = select Teardrop Camper ,
-save it.
+- Search How We Roll Maintenance ->
+- click on Maintenance Requests ->
+- click on first case ->
+- click Details ->
+- change the type Repair to Routine Maintenance ->
+- select Origin = Phone ->
+- Vehicle = select Teardrop Camper ,
+- save it.
 
 2.Feed ->Close Case 
-save it..
+- save it..
 
 3.Go to the Object Manager ->
-Maintenance Request ->
-Field & Relationships ->
-New ->Lookup Relationship ->
-next ->
-select Equipment ->
-next ->
-Field Label = Equipment ->
-next->next->next -> 
-save it .
+- Maintenance Request ->
+- Field & Relationships ->
+- New ->Lookup Relationship ->
+- next ->
+- select Equipment ->
+- next ->
+- Field Label = Equipment ->
+- - next->next->next -> 
+- - save it .
 
 4.Now go to the developer console use below code.
  
@@ -134,16 +134,16 @@ public with sharing class MaintenanceRequestHelper {
  
 After saving the code go back the How We Roll Maintenance , 
 
-click on Maintenance Requests ->
-click on 2nd case ->
-click Details -> 
-change the type Repair to Routine Maintenance -> 
-select Origin = Phone -> 
-Vehicle = select Teardrop Camper , 
-save it.
+- click on Maintenance Requests ->
+- click on 2nd case ->
+- click Details -> 
+- change the type Repair to Routine Maintenance -> 
+- select Origin = Phone -> 
+- Vehicle = select Teardrop Camper , 
+- save it.
 
-Feed -> Close Case 
-save it..
+- - Feed -> Close Case 
+- - save it..
 
 Now check challenge.
 
@@ -152,13 +152,13 @@ Now check challenge.
 ## Synchronize Salesforce data with an external system
 
 
-Setup ->
-Search in quick find box ->
-click Remote Site Settings ->
-Name = Warehouse  URL , 
-Remote Site URL = https://th-superbadge-apex.herokuapp.com , 
-make sure active is selected.
-Go to the developer console use below code .
+- Setup ->
+- Search in quick find box ->
+- click Remote Site Settings ->
+- Name = Warehouse  URL , 
+- Remote Site URL = https://th-superbadge-apex.herokuapp.com , 
+- make sure active is selected.
+- Go to the developer console use below code .
 
 ### WarehouseCalloutService.apxc :-
 
@@ -500,9 +500,9 @@ trigger MaintenanceRequest on Case (before update, after update) {
 }
  ```
  
-run all
+- - - run all
 
-Now check challenge.
+- - - Now check challenge.
 
 
 
@@ -603,9 +603,9 @@ global class WarehouseCalloutServiceMock implements HttpCalloutMock {
 }
  ```
  
-run all
+- - run all
 
-Now check challenge.
+- - Now check challenge.
 
 
 
@@ -651,5 +651,5 @@ public class WarehouseSyncScheduleTest {
 }
 ```
  
-run all
-Now check challenge.
+- run all
+- Now check challenge.

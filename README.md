@@ -142,8 +142,8 @@ After saving the code go back the How We Roll Maintenance ,
 - Vehicle = select Teardrop Camper , 
 - save it.
 
-- - Feed -> Close Case 
-- - save it..
+- Feed -> Close Case 
+- save it..
 
 Now check challenge.
 
@@ -244,13 +244,14 @@ global with sharing class WarehouseSyncSchedule implements Schedulable{
 ```
  
 
-Save it , after that...
+- Save it , 
+- after that...
 
-Go to setup ->
-Seacrh in Quick find box ->
-Apex Classes -> 
-click Schedule Apex and Job Name = WarehouseSyncScheduleJob ,
-Apex Class = WarehouseSyncSchedule 
+- Go to setup ->
+- Seacrh in Quick find box ->
+- Apex Classes -> 
+- click Schedule Apex and Job Name = WarehouseSyncScheduleJob ,
+- Apex Class = WarehouseSyncSchedule 
 
 Now check challenge.
 
@@ -500,9 +501,9 @@ trigger MaintenanceRequest on Case (before update, after update) {
 }
  ```
  
-- - - run all
+- run all
 
-- - - Now check challenge.
+- Now check challenge.
 
 
 
@@ -603,9 +604,9 @@ global class WarehouseCalloutServiceMock implements HttpCalloutMock {
 }
  ```
  
-- - run all
+- run all
 
-- - Now check challenge.
+- Now check challenge.
 
 
 

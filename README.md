@@ -603,7 +603,10 @@ global class WarehouseCalloutServiceMock implements HttpCalloutMock {
     }
 }
  ```
- 
+- save all
+- setup->
+- search and open schedule jobs in quick find box
+- delete all jobs
 - run all
 
 - Now check challenge.

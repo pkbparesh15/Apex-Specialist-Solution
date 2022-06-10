@@ -607,7 +607,8 @@ global class WarehouseCalloutServiceMock implements HttpCalloutMock {
 - setup->
 - search and open schedule jobs in quick find box
 - delete all jobs
-- run all
+- go to developer console
+- run all 
 
 - Now check challenge.
 

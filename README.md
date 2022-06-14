@@ -3,23 +3,43 @@
 
 - Create a new Trailhead Playground for this superbadge.
 - Install this unlocked package (package ID: 04t6g000008av9iAAA).
-- Add picklist values Repair and Routine Maintenance to the Type field on the Case object.
-- Update the Case page layout assignment to use the Case (HowWeRoll) Layout for your profile.
-- Rename the tab/label for the Case tab to Maintenance Request.
-- Update the Product page layout assignment to use the Product (HowWeRoll) Layout for your profile.
-- Rename the tab/label for the Product object to Equipment.
-- Click on App Launcher and search Create Default Data then Click Create Data to generate sample data for the application.
- 
-
-
-
-
+- Setup->
+- Object Manager->
+- Case->
+- Fields and Relationships->
+- Type->
+- Picklist Values->
+- Add->
+- Paste (Repair,Routine Maintenance)
+- Save->
+- Case page layout->
+- Edit Layout Assignment->
+- Select all...
+- Layout = Case (HowWeRoll) Layout
+- Save
+- Object Manager->
+- Product->
+- Product page layout->
+- Edit Layout Assignment->
+- Select all...
+- Layout = Product (HowWeRoll) Layout
+- Save
+- Setuo->
+- Search and Select **Rename the tab/label**
+- Edit->Case
+- Label = Maintenance Request
+- Save
+- Edit->Product
+- Label = Equipment
+- Save
+- Click on App Launcher and search Create Default Data
+- Click Create Data
 
 ## Challenge 1
 ## Automated Record Creation
 
 
-1.Go to the App Launcher ->
+1.App Launcher ->
 - Search How We Roll Maintenance ->
 - click on Maintenance Requests ->
 - click on first case ->
@@ -45,8 +65,6 @@
 
 4.Now go to the developer console use below code.
  
- 
-
 ### MaintenanceRequestHelper.apxc
 
 ```
